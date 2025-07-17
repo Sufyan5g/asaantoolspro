@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter (Celsius, Fahrenheit, Kelvin) - Asaan Tools Pro</title>
+    <meta name="description" content="Instantly convert temperatures between Celsius (°C), Fahrenheit (°F), and Kelvin (K) with our free and easy-to-use online temperature converter.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+<link rel="canonical" href="https://asaantoolspro.netlify.app/tools/temp-converter.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Online Temperature Converter</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Temperature Converter</h2>
+                <div class="form-grid">
+                    <div class="input-group"><label>Celsius (°C)</label><input type="number" id="tc-c" placeholder="e.g., 25"></div>
+                    <div class="input-group"><label>Fahrenheit (°F)</label><input type="number" id="tc-f" placeholder="e.g., 77"></div>
+                    <div class="input-group"><label>Kelvin (K)</label><input type="number" id="tc-k" placeholder="e.g., 298.15"></div>
+                </div>
+                <p style="text-align:center; color: var(--text-light); margin-top:1rem;">Edit any field to convert the others automatically.</p>
+            </div>
+            <div class="seo-content">
+                <h2>Quick and Accurate Temperature Conversions</h2>
+                <p>Different parts of the world use different units to measure temperature. The most common are Celsius (°C), Fahrenheit (°F), and Kelvin (K). Our Temperature Converter is a simple tool that helps you instantly convert any value between these three units, which is useful for students, scientists, travelers, and anyone dealing with weather reports or recipes from other countries.</p>
+                <h3>How to Use:</h3>
+                <p>Simply enter a value in any of the three fields (Celsius, Fahrenheit, or Kelvin). The other two fields will automatically update with the converted values. There is no need to click a button.</p>
+            </div>
+        </main>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const celsiusInput = document.getElementById('tc-c');
+        const fahrenheitInput = document.getElementById('tc-f');
+        const kelvinInput = document.getElementById('tc-k');
+
+        celsiusInput.addEventListener('input', e => {
+            const c = parseFloat(e.target.value);
+            if (isNaN(c)) return;
+            fahrenheitInput.value = (c * 9/5 + 32).toFixed(2);
+            kelvinInput.value = (c + 273.15).toFixed(2);
+        });
+        fahrenheitInput.addEventListener('input', e => {
+            const f = parseFloat(e.target.value);
+            if (isNaN(f)) return;
+            celsiusInput.value = ((f - 32) * 5/9).toFixed(2);
+            kelvinInput.value = (((f - 32) * 5/9) + 273.15).toFixed(2);
+        });
+        kelvinInput.addEventListener('input', e => {
+            const k = parseFloat(e.target.value);
+            if (isNaN(k)) return;
+            celsiusInput.value = (k - 273.15).toFixed(2);
+            fahrenheitInput.value = (((k - 273.15) * 9/5) + 32).toFixed(2);
+        });
+    </script>
+</body>
+</html>

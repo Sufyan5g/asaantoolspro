@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Text to Speech Converter (Online TTS) - Asaan Tools Pro</title>
+    <meta name="description" content="Convert any text into natural-sounding speech with our free online Text to Speech (TTS) tool. Listen to articles, books, or your own writing.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+<link rel="canonical" href="https://asaantoolspro.netlify.app/tools/text-to-speech.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Online Text to Speech (TTS)</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Text to Speech</h2>
+                <textarea id="tts-input" rows="8" placeholder="Enter text you want to hear...">Hello! Welcome to Asaan Tools Pro. You can use this tool to listen to any text.</textarea>
+                <button id="tts-btn">Speak</button>
+            </div>
+            <div class="seo-content">
+                <h2>Hear Your Text Read Aloud</h2>
+                <p>Our Text to Speech (TTS) converter is an accessibility tool that reads text aloud in a clear, natural-sounding voice. It's incredibly useful for people with visual impairments, individuals who prefer listening over reading, or for proofreading your own writing by hearing how it flows.</p>
+                <h3>How to Use:</h3>
+                <ol>
+                    <li>Type or paste the text you want to convert into the text box.</li>
+                    <li>Click the "Speak" button.</li>
+                    <li>Your device's built-in speech synthesis engine will read the text aloud. Ensure your device's volume is turned up.</li>
+                </ol>
+                <h3>Benefits of TTS:</h3>
+                <ul>
+                    <li><strong>Accessibility:</strong> Helps users with reading difficulties or visual impairments access written content.</li>
+                    <li><strong>Multitasking:</strong> Listen to articles or documents while doing other tasks like driving or exercising.</li>
+                    <li><strong>Learning:</strong> Aids in language learning by helping with pronunciation and listening comprehension.</li>
+                </ul>
+            </div>
+        </main>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        document.getElementById('tts-btn').addEventListener('click', () => {
+            const text = document.getElementById('tts-input').value;
+            if (text.trim() === '') {
+                alert('Please enter some text.');
+                return;
+            }
+            // Cancel any previous speech
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        });
+    </script>
+</body>
+</html>
