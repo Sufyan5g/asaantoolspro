@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Generator (for ChatGPT & Midjourney) - Asaan Tools Pro</title>
+    <meta name="description" content="Generate high-quality, detailed prompts for AI tools like ChatGPT and Midjourney. Create better content, images, and code with our free prompt builder.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>AI Prompt Generator</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>AI Prompt Generator</h2>
+                <div class="input-group">
+                    <label>Select a Template</label>
+                    <select id="prompt-template">
+                        <option value="blog">Blog Post Idea</option>
+                        <option value="image">Image Generation (Midjourney)</option>
+                        <option value="email">Professional Email</option>
+                        <option value="code">Code Snippet</option>
+                    </select>
+                </div>
+                <div id="prompt-fields"></div>
+                <button id="generate-prompt-btn">Generate Prompt</button>
+                <div class="result-display" id="prompt-result" style="text-align:left;">
+                    <textarea readonly rows="6" style="width:100%;" onclick="this.select();"></textarea>
+                </div>
+            </div>
+            <div class="seo-content">
+                <h2>Unlock the Full Power of AI with Better Prompts</h2>
+                <p>The quality of output you get from AI tools like ChatGPT, Google Gemini, or Midjourney depends heavily on the quality of your input (the "prompt"). A simple prompt gives a simple answer, but a detailed prompt gives a detailed, high-quality result. Our AI Prompt Generator helps you structure your thoughts into a perfect prompt.</p>
+                <h3>How to Use:</h3>
+                <ol>
+                    <li>Select a template based on what you want to create (e.g., a blog post, an image).</li>
+                    <li>Fill in the specific details in the fields that appear.</li>
+                    <li>Click "Generate Prompt".</li>
+                    <li>A complete, structured prompt will be created for you. Copy it and paste it into your favorite AI tool.</li>
+                </ol>
+            </div>
+        </main>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const templateSelect = document.getElementById('prompt-template');
+        const fieldsDiv = document.getElementById('prompt-fields');
+        const generateBtn = document.getElementById('generate-prompt-btn');
+        const resultTextarea = document.querySelector('#prompt-result textarea');
+
+        const templates = {
+            blog: {
+                fields: [
+                    { label: 'Topic', placeholder: 'e.g., benefits of hydration' },
+                    { label: 'Target Audience', placeholder: 'e.g., fitness enthusiasts' },
+                    { label: 'Tone', placeholder: 'e.g., informative and friendly' }
+                ],
+                format: (topic, audience, tone) => `Write a detailed blog post about "${topic}". The target audience is ${audience}. Write in a ${tone} tone. Include a catchy title, an introduction, three main points with headings, and a conclusion.`
+            },
+            image: {
+                fields: [
+                    { label: 'Main Subject', placeholder: 'e.g., a majestic lion' },
+                    { label: 'Setting / Background', placeholder: 'e.g., in the Serengeti at sunset' },
+                    { label: 'Style', placeholder: 'e.g., photorealistic, 8K, cinematic lighting' }
+                ],
+                format: (subject, setting, style) => `${subject} ${setting}, ${style} --ar 16:9`
+            },
+            email: {
+                fields: [
+                    { label: 'Purpose of Email', placeholder: 'e.g., job application follow-up' },
+                    { label: 'Recipient Name', placeholder: 'e.g., Mr. Ahmed' },
+                    { label: 'Key Point to Mention', placeholder: 'e.g., my recent interview on Monday' }
+                ],
+                format: (purpose, recipient, point) => `Write a professional email for a "${purpose}". The recipient is ${recipient}. The email should politely ask for an update and mention ${point}. Keep it concise and courteous.`
+            },
+            code: {
+                fields: [
+                    { label: 'Programming Language', placeholder: 'e.g., JavaScript' },
+                    { label: 'Functionality Needed', placeholder: 'e.g., a function to reverse a string' },
+                ],
+                format: (language, functionality) => `Write a code snippet in ${language} for the following functionality: ${functionality}. Include comments to explain the code.`
+            }
+        };
+
+        function renderFields() {
+            const selected = templateSelect.value;
+            fieldsDiv.innerHTML = '';
+            templates[selected].fields.forEach((field, index) => {
+                fieldsDiv.innerHTML += `<div class="input-group"><label>${field.label}</label><input type="text" class="prompt-input" id="field-${index}" placeholder="${field.placeholder}"></div>`;
+            });
+        }
+        
+        generateBtn.addEventListener('click', () => {
+            const selected = templateSelect.value;
+            const inputs = Array.from(document.querySelectorAll('.prompt-input')).map(input => input.value);
+            const prompt = templates[selected].format(...inputs);
+            resultTextarea.value = prompt;
+        });
+
+        templateSelect.addEventListener('change', renderFields);
+        renderFields();
+    </script>
+</body>
+</html>
