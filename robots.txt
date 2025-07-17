@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asaantoolspro.great-site.net/sitemap.xml
