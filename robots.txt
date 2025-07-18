@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://asaantoolspro.netlify.app/sitemap.xml
