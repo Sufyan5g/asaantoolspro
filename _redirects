@@ -1,6 +1,0 @@
-# WWW to non-WWW Redirect
-https://www.asaantoolspro.netlify.app/*    https://asaantoolspro.netlify.app/:splat    301!
-
-# HTTP to HTTPS Redirect
-http://asaantoolspro.netlify.app/*      https://asaantoolspro.netlify.app/:splat    301!
-http://www.asaantoolspro.netlify.app/*   https://asaantoolspro.netlify.app/:splat    301!
