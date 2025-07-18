@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI & Loan Calculator (Installment Calculator) - Asaan Tools Pro</title>
+    <meta name="description" content="Calculate your Equated Monthly Installment (EMI) for any loan. Our free loan calculator helps you plan your finances by showing your monthly payments.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-57KYCQBEVH');
+    </script>
+    <link rel="canonical" href="https://asaantoolspro.netlify.app/tools/loan-calculator.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1>
+            <p>Your one-stop destination for daily utility tools.</p>
+        </header>
+
+        <!-- === CHANGE 1: Added a proper H1 Tag for the page === -->
+        <h1 class="tool-title">Loan & EMI Calculator</h1>
+
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <!-- Tool functionality remains the same -->
+                <div class="form-grid">
+                    <div class="input-group"><label>Loan Amount (e.g., 100000)</label><input type="number" id="loan-amount"></div>
+                    <div class="input-group"><label>Annual Interest Rate (%)</label><input type="number" id="interest-rate"></div>
+                </div>
+                <div class="input-group"><label>Loan Tenure (Years)</label><input type="number" id="loan-tenure"></div>
+                <button id="emi-btn">Calculate EMI</button>
+                <div class="result-display" id="emi-result">Your loan details will be displayed here.</div>
+            </div>
+
+            <!-- === CHANGE 2: Added more content and internal links === -->
+            <div class="seo-content">
+                <h2>Understanding Your Loan with the EMI Calculator</h2>
+                <p>An Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender each month. Our calculator helps you understand exactly how much you will need to pay so you can plan your finances better.</p>
+                
+                <h3>How to Use Our Calculator</h3>
+                <ol>
+                    <li>Enter the total loan amount you wish to take.</li>
+                    <li>Enter the annual interest rate offered by the bank.</li>
+                    <li>Enter the loan period in years.</li>
+                    <li>The tool will instantly show your monthly EMI, total interest, and total repayment amount.</li>
+                </ol>
+                <p>To learn more about EMIs and how they are calculated, read our detailed guide: <strong><a href="/articles/understanding-emi-before-loan.html" style="color: var(--primary-color);">Understanding Loan EMIs</a></strong>.</p>
+            </div>
+        </main>
+
+        <!-- === CHANGE 3: Added a relevant outgoing links section === -->
+        <div class="related-posts-container">
+          <h3>Related Financial Tools</h3>
+          <div class="related-grid">
+            <a href="/tools/zakat-calculator.html" class="related-card">Zakat Calculator</a>
+            <a href="/tools/discount-calculator.html" class="related-card">Discount Calculator</a>
+            <a href="/tools/percentage-calculator.html" class="related-card">Percentage Calculator</a>
+          </div>
+        </div>
+
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="/privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        // JS remains the same
+        document.getElementById('emi-btn').addEventListener('click', () => {
+            const p = parseFloat(document.getElementById('loan-amount').value);
+            const r = parseFloat(document.getElementById('interest-rate').value) / 12 / 100;
+            const n = parseFloat(document.getElementById('loan-tenure').value) * 12;
+            if (p && r && n) {
+                const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                const totalPayment = emi * n;
+                const totalInterest = totalPayment - p;
+                document.getElementById('emi-result').innerHTML = `<p>Monthly EMI: <strong>${emi.toFixed(2)}</strong></p><p>Total Interest: <strong>${totalInterest.toFixed(2)}</strong></p><p>Total Payment: <strong>${totalPayment.toFixed(2)}</strong></p>`;
+            } else {
+                document.getElementById('emi-result').textContent = "Please fill all fields correctly.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator (for URLs, Text, WiFi) - Asaan Tools Pro</title>
+    <meta name="description" content="Create custom QR codes for URLs, text, contact information, WiFi access, and more. Our free QR code generator is fast, simple, and reliable.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-57KYCQBEVH');
+    </script>
+    <link rel="canonical" href="https://asaantoolspro.netlify.app/tools/qr-generator.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1>
+            <p>Your one-stop destination for daily utility tools.</p>
+        </header>
+
+        <!-- H1 Tag Added -->
+        <h1 class="tool-title">Online QR Code Generator</h1>
+
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <div class="input-group">
+                    <label>Enter Text or URL</label>
+                    <input type="text" id="qr-input" placeholder="e.g., https://asaantoolspro.netlify.app/">
+                </div>
+                <button id="qr-btn">Generate QR Code</button>
+                <div class="result-display" style="text-align:center; padding: 20px;" id="qrcode-container">
+                    <p>Your QR code will appear here.</p>
+                </div>
+            </div>
+            <!-- More Content Added -->
+            <div class="seo-content">
+                <h2>What is a QR Code?</h2>
+                <p>A QR (Quick Response) code is a type of barcode that can be read using a smartphone camera. It stores information such as text or URLs, allowing users to access information quickly without typing.</p>
+                <h3>How to Generate a QR Code:</h3>
+                <ol>
+                    <li>Enter the website URL or text you want to encode.</li>
+                    <li>Click "Generate QR Code".</li>
+                    <li>Your custom QR code will be instantly generated. You can right-click (or long-press on mobile) to save the image.</li>
+                </ol>
+                <p>Learn more about QR codes in our guide: <strong><a href="/articles/what-is-a-qr-code.html" style="color: var(--primary-color);">What is a QR Code?</a></strong></p>
+            </div>
+        </main>
+        <!-- Outgoing Links Added -->
+        <div class="related-posts-container">
+          <h3>Related Utility Tools</h3>
+          <div class="related-grid">
+            <a href="/tools/password-generator.html" class="related-card">Password Generator</a>
+            <a href="/tools/image-compressor.html" class="related-card">Image Compressor</a>
+            <a href="/tools/url-encoder.html" class="related-card">URL Encoder/Decoder</a>
+          </div>
+        </div>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="/about.html">About</a> | <a href="/contact.html">Contact</a> | <a href="/privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const qrContainer = document.getElementById('qrcode-container');
+        const generateBtn = document.getElementById('qr-btn');
+        let qrcode = null; 
+        generateBtn.addEventListener('click', () => {
+            const text = document.getElementById('qr-input').value;
+            if (text) {
+                qrContainer.innerHTML = ''; 
+                qrcode = new QRCode(qrContainer, {
+                    text: text, width: 200, height: 200, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.H
+                });
+            } else {
+                qrContainer.innerHTML = '<p>Please enter some text or a URL.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
