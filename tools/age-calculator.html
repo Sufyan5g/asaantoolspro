@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Age Calculator (Calculate Age from Date of Birth) - Asaan Tools Pro</title>
+    <meta name="description" content="Find out your exact age in years, months, and days with our simple and accurate age calculator. Just enter your date of birth.">
+    <link rel="canonical" href="https://asaantoolspro.netlify.app/tools/age-calculator.html" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WDQXD324');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDQXD324"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Calculate Age from Date of Birth</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Age Calculator</h2>
+                <div class="input-group">
+                    <label>Enter Your Date of Birth</label>
+                    <input type="date" id="dob-input">
+                </div>
+                <button id="age-btn">Calculate Age</button>
+                <div class="result-display" id="age-result">Your age will be displayed here.</div>
+            </div>
+            <div class="seo-content">
+                <h2>How Does the Age Calculator Work?</h2>
+                <p>Our Age Calculator determines your age by calculating the time difference between your date of birth and the current date. It provides a detailed result, showing your age not just in years, but also in months and days, giving you a precise measure of your time on Earth.</p>
+                <h3>Why Calculate Your Age?</h3>
+                <p>While it seems simple, calculating your exact age down to the day can be useful for various applications, such as filling out official forms, planning for age-related milestones, or simply out of curiosity. This tool removes any manual calculation errors and gives you an instant, accurate result.</p>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <p>© 2024 Asaan Tools Pro.</p>
+            <nav class="footer-nav">
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/privacy.html">Privacy</a>
+            </nav>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('age-btn').addEventListener('click', () => {
+            const dob = new Date(document.getElementById('dob-input').value);
+            if (isNaN(dob)) {
+                document.getElementById('age-result').textContent = "Please enter a valid date.";
+                return;
+            }
+            const today = new Date();
+            let ageYears = today.getFullYear() - dob.getFullYear();
+            let ageMonths = today.getMonth() - dob.getMonth();
+            let ageDays = today.getDate() - dob.getDate();
+            if (ageDays < 0) {
+                ageMonths--;
+                ageDays += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+            }
+            if (ageMonths < 0) {
+                ageYears--;
+                ageMonths += 12;
+            }
+            document.getElementById('age-result').innerHTML = `You are <strong>${ageYears}</strong> years, <strong>${ageMonths}</strong> months, and <strong>${ageDays}</strong> days old.`;
+        });
+    </script>
+</body>
+</html>
