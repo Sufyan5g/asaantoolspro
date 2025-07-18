@@ -1,0 +1,12 @@
+# === SAHI REDIRECTS CODE ===
+
+# Redirect www to non-www (for Netlify subdomains)
+https://www.asaantoolspro.netlify.app/*   https://asaantoolspro.netlify.app/:splat   301!
+
+# Redirects for old/broken article links
+/articles/how-to-download-youtube-thumbnail.html   /articles/how-to-download-youtube-thumbnails.html   301
+/articles/what-is-json-and-why-use-it.html   /articles/what-is-json-and-why-use-it-for-data.html   301
+/articles/download-youtube-thumbnails-guide.html   /articles/how-to-download-youtube-thumbnails.html   301
+
+# Redirect for weird /p/ links to homepage
+/p/*   /   301
