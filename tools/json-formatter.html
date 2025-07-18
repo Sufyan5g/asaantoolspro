@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter & Validator Online - Asaan Tools Pro</title>
+    <meta name="description" content="Easily format, beautify, and validate your JSON data. Our online tool helps developers debug and read complex JSON structures with clear formatting.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+<link rel="canonical" href="https://asaantoolspro.netlify.app/tools/json-formatter.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Online JSON Formatter</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>JSON Formatter & Validator</h2>
+                <textarea id="json-input" rows="15" placeholder='Paste your JSON data here. e.g., {"name":"Asaan Tools","status":true}'></textarea>
+                <button id="json-btn">Format / Validate</button>
+                <pre class="result-display" id="json-output" style="text-align: left;"></pre>
+            </div>
+            <div class="seo-content">
+                <h2>What is JSON?</h2>
+                <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write and easy for machines to parse and generate. It is the most common data format used for asynchronous browser-server communication, largely replacing XML.</p>
+                <h3>Why Use a JSON Formatter?</h3>
+                <p>Often, JSON data received from an API is minified, meaning all whitespace is removed, making it very difficult to read. A JSON formatter adds indentation and line breaks, transforming the garbled text into a readable, tree-like structure. Our tool also acts as a validator, telling you if your JSON has any syntax errors.</p>
+            </div>
+        </main>
+        <div class="related-posts-container">
+  <h3>Related Web & Developer Tools</h3>
+  <div class="related-grid">
+    <a href="/tools/image-compressor.html" class="related-card">Image Compressor</a>
+    <a href="/tools/youtube-thumbnail-downloader.html" class="related-card">YouTube Thumbnail Downloader</a>
+    <a href="/tools/qr-generator.html" class="related-card">QR Code Generator</a>
+    <a href="/tools/password-generator.html" class="related-card">Password Generator</a>
+    <a href="/tools/json-formatter.html" class="related-card">JSON Formatter</a>
+    <a href="/tools/my-ip-address.html" class="related-card">What Is My IP Address</a>
+    <a href="/articles/how-to-choose-a-strong-password.html" class="related-card">Guide: Choose a Strong Password</a>
+    <a href="/articles/what-is-a-qr-code.html" class="related-card">Guide: What is a QR Code?</a>
+  </div>
+</div>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        document.getElementById('json-btn').addEventListener('click', () => {
+            const input = document.getElementById('json-input');
+            const output = document.getElementById('json-output');
+            try {
+                const parsed = JSON.parse(input.value);
+                output.textContent = JSON.stringify(parsed, null, 2);
+                output.style.color = '#1a73e8';
+            } catch (e) {
+                output.textContent = `Error: Invalid JSON. ${e.message}`;
+                output.style.color = '#d93025';
+            }
+        });
+    </script>
+</body>
+</html>
