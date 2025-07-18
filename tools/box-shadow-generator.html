@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live CSS Box Shadow Generator - Asaan Tools Pro</title>
+    <meta name="description" content="Visually create complex CSS box-shadow effects with our interactive generator. Adjust offsets, blur, spread, and color to get the perfect shadow code.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+<link rel="canonical" href="https://asaantoolspro.netlify.app/tools/box-shadow-generator.html" />
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>CSS Box Shadow Generator</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Box Shadow Generator</h2>
+                <div id="bs-preview" style="width: 150px; height: 150px; background: var(--primary-color); margin: 20px auto; border-radius: 12px;"></div>
+                <div class="form-grid">
+                    <div class="input-group"><label>Horizontal Offset</label><input type="range" id="bs-hoffset" min="-50" max="50" value="10"></div>
+                    <div class="input-group"><label>Vertical Offset</label><input type="range" id="bs-voffset" min="-50" max="50" value="10"></div>
+                    <div class="input-group"><label>Blur Radius</label><input type="range" id="bs-blur" min="0" max="100" value="15"></div>
+                    <div class="input-group"><label>Spread Radius</label><input type="range" id="bs-spread" min="-50" max="50" value="5"></div>
+                </div>
+                <div class="input-group"><label>Shadow Color</label><input type="color" id="bs-color" value="#000000"></div>
+                <div class="result-display" id="bs-result"></div>
+            </div>
+            <div class="seo-content">
+                <h2>Create Stunning CSS Box Shadows Effortlessly</h2>
+                <p>The `box-shadow` CSS property adds shadow effects around an element's frame. Manually writing complex box-shadow code can be tricky and time-consuming. Our interactive generator provides a visual interface with sliders, allowing you to see the effect in real-time as you make adjustments. Once you are happy with the result, simply copy the generated CSS code.</p>
+                <h3>How to Use the Generator:</h3>
+                <ul>
+                    <li>Use the sliders to adjust the Horizontal and Vertical offsets of the shadow.</li>
+                    <li>Control the sharpness of the shadow with the Blur Radius slider.</li>
+                    <li>Increase or decrease the size of the shadow with the Spread Radius slider.</li>
+                    <li>Pick a color for your shadow using the color picker.</li>
+                    <li>The CSS code will be automatically updated in the result box below.</li>
+                </ul>
+            </div>
+        </main>
+        <div class="related-posts-container">
+  <h3>Other Utility & Developer Tools</h3>
+  <div class="related-grid">
+    <a href="/tools/random-number.html" class="related-card">Random Number Generator</a>
+    <a href="/tools/color-picker.html" class="related-card">Color Picker</a>
+    <a href="/tools/url-encoder.html" class="related-card">URL Encoder</a>
+    <a href="/tools/gradient-generator.html" class="related-card">CSS Gradient Generator</a>
+    <a href="/tools/study-timer.html" class="related-card">Study Timer</a>
+    <a href="/tools/temp-converter.html" class="related-card">Temperature Converter</a>
+    <a href="/tools/password-generator.html" class="related-card">Tool: Password Generator</a>
+    <a href="/tools/image-compressor.html" class="related-card">Tool: Image Compressor</a>
+  </div>
+</div>
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const hOffset = document.getElementById('bs-hoffset'), vOffset = document.getElementById('bs-voffset'), blur = document.getElementById('bs-blur'), spread = document.getElementById('bs-spread'), color = document.getElementById('bs-color'), preview = document.getElementById('bs-preview'), result = document.getElementById('bs-result');
+        function updateShadow() {
+            const shadow = `${hOffset.value}px ${vOffset.value}px ${blur.value}px ${spread.value}px ${color.value}`;
+            preview.style.boxShadow = shadow;
+            result.textContent = `box-shadow: ${shadow};`;
+        }
+        [hOffset, vOffset, blur, spread, color].forEach(el => el.addEventListener('input', updateShadow));
+        updateShadow();
+    </script>
+</body>
+</html>
