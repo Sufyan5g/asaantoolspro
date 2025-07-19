@@ -214,3 +214,87 @@ body { font-family: var(--font-family); background-color: var(--bg-color); color
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
     color: #0056b3;
 }
+/* === START: Related Content Section Styles === */
+
+.related-content-container {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 0 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.featured-related-box {
+    padding: 40px 20px;
+    background-color: #f8f8f9; /* Halkay rang ka background */
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.featured-related-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.featured-related-box p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+}
+
+.featured-cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #5856d6; /* Purple button */
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.featured-cta-button:hover {
+    background-color: #4a48b9;
+    transform: translateY(-2px);
+}
+
+.more-related-section {
+    margin-top: 50px;
+}
+
+.more-related-section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.related-links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Links ke darmiyan space */
+}
+
+.related-link-item {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.related-link-item:hover {
+    border-color: #007bff;
+    background-color: #f7faff;
+    color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* === END: Related Content Section Styles === */
