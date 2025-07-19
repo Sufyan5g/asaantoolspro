@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator (Sale Price Calculator) - Asaan Tools Pro</title>
+    <meta name="description" content="Calculate the final price of an item after a discount. Our free sale price calculator makes it easy to find out how much you will save.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Sale & Discount Calculator</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Discount Calculator</h2>
+                <div class="form-grid">
+                    <div class="input-group"><label>Original Price</label><input type="number" id="dc-price" placeholder="e.g., 1500"></div>
+                    <div class="input-group"><label>Discount (%)</label><input type="number" id="dc-disc" placeholder="e.g., 20"></div>
+                </div>
+                <button id="dc-btn">Calculate</button>
+                <div class="result-display" id="dc-result">Enter details to see the final price.</div>
+            </div>
+            <div class="seo-content">
+                <h2>Never Overpay Again</h2>
+                <p>Shopping during a sale can be exciting, but sometimes it's hard to figure out the final price quickly. Our Discount Calculator does the math for you, so you know exactly how much you're saving and how much you need to pay. It's a must-have tool for any savvy shopper.</p>
+                <h3>How It Works:</h3>
+                <ol>
+                    <li>Enter the original price of the item.</li>
+                    <li>Enter the discount percentage.</li>
+                    <li>Click "Calculate" to see the final price and the amount you saved.</li>
+                </ol>
+            </div>
+        </main>
+        <!-- === START: Related Content Section === -->
+<div class="related-content-container">
+
+    <!-- Featured Box -->
+    <div class="featured-related-box">
+        <h2>Want to Learn the Formula?</h2>
+        <p>Discount calculate karne ke baad, hamari guide se seekhein ke discount nikalne ka formula kya hai aur isay manual तरीक़ے se kaise calculate kiya jaata hai.</p>
+        <a href="../articles/how-to-calculate-discount.html" class="featured-cta-button">
+            Read Discount Calculation Guide
+        </a>
+    </div>
+
+    <!-- More Related Links -->
+    <div class="more-related-section">
+        <h3>More Shopping & Financial Tools</h3>
+        <div class="related-links-grid">
+            <a href="percentage-calculator.html" class="related-link-item">Percentage Calculator</a>
+            <a href="tip-calculator.html" class="related-link-item">Tip Calculator</a>
+            <a href="loan-calculator.html" class="related-link-item">EMI & Loan Calculator</a>
+            <a href="zakat-calculator.html" class="related-link-item">Zakat Calculator</a>
+        </div>
+    </div>
+
+</div>
+<!-- === END: Related Content Section === -->
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        document.getElementById('dc-btn').addEventListener('click', () => {
+            const price = parseFloat(document.getElementById('dc-price').value);
+            const disc = parseFloat(document.getElementById('dc-disc').value);
+            if (!isNaN(price) && !isNaN(disc)) {
+                const saved = price * (disc / 100);
+                const finalPrice = price - saved;
+                document.getElementById('dc-result').innerHTML = `<p>Final Price: <strong>${finalPrice.toFixed(2)}</strong></p><p>You Saved: <strong>${saved.toFixed(2)}</strong></p>`;
+            } else {
+                document.getElementById('dc-result').textContent = 'Please enter valid numbers.';
+            }
+        });
+    </script>
+</body>
+</html>
