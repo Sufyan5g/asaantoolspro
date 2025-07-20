@@ -5,143 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tools - A Complete List of Free Online Utilities | Asaan Tools Pro</title>
     <meta name="description" content="Explore a complete list of all free online tools offered by Asaan Tools Pro. From calculators to converters, find the perfect tool for your needs.">
-    <link rel="stylesheet" href="style.css">
-    <!-- Add Favicon, Social Tags here if you want -->
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header/Nav bar goes here -->
+    <!-- Header/Nav bar -->
+    <header>
+        <nav class="main-nav">
+            <a href="/" class="nav-logo">Asaan Tools Pro</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/all-tools.html">Tools</a>
+                <a href="/all-articles.html">Articles</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <div class="page-container">
-        <h1>All Our Tools</h1>
-        <p class="page-subtitle">Find the exact tool you need from our comprehensive collection. Simply start typing below.</p>
+        <!-- Clickable Heading -->
+        <header class="main-header">
+            <h1><a href="/" style="text-decoration: none; color: inherit;">Asaan Tools <span>Pro</span></a></h1>
+            <p>Find the exact tool you need from our comprehensive collection. Simply start typing below.</p>
+        </header>
+
+        <!-- === NAYE NAVIGATION BUTTONS (Tools wala button 'active' hai) === -->
+        <div class="primary-nav-buttons">
+            <a href="/index.html" class="nav-button">Home</a>
+            <a href="/all-tools.html" class="nav-button active">All Tools</a> <!-- 'active' CLASS YAHAN HAI -->
+            <a href="/all-articles.html" class="nav-button">All Articles</a>
+        </div>
+        <!-- ============================================================= -->
 
         <!-- Search Bar -->
         <div class="search-bar-container">
             <input type="text" id="search-input" placeholder="Search for a tool (e.g., BMI, QR, Image)...">
         </div>
-            <!-- YEH NAZA CODE ADD KARNA HAI -->
-            <div class="primary-nav-buttons">
-                <a href="/index.html" class="nav-button active">Home</a>
-                <a href="/all-tools.html" class="nav-button">All Tools</a>
-                <a href="/all-articles.html" class="nav-button">All Articles</a>
-            </div>
-            <!-- ============================== -->
+
         <!-- Tools Grid -->
         <div class="items-grid" id="tools-grid">
-            <!-- This list is generated from your files -->
-            <a href="/tools/age-calculator.html" class="item-card" data-name="Age Calculator Date Birthday">
-                <h3 class="card-title">Age Calculator</h3>
-            </a>
-            <a href="/tools/ai-prompt-generator.html" class="item-card" data-name="AI Prompt Generator Artificial Intelligence">
-                <h3 class="card-title">AI Prompt Generator</h3>
-            </a>
-            <a href="/tools/base64-converter.html" class="item-card" data-name="Base64 Converter Encoder Decoder Developer">
-                <h3 class="card-title">Base64 Converter</h3>
-            </a>
-            <a href="/tools/bmi-calculator.html" class="item-card" data-name="BMI Calculator Body Mass Index Health">
-                <h3 class="card-title">BMI Calculator</h3>
-            </a>
-            <a href="/tools/box-shadow-generator.html" class="item-card" data-name="Box Shadow Generator CSS Design">
-                <h3 class="card-title">Box Shadow Generator</h3>
-            </a>
-            <a href="/tools/case-converter.html" class="item-card" data-name="Case Converter Upper Lower Text">
-                <h3 class="card-title">Case Converter</h3>
-            </a>
-            <a href="/tools/color-picker.html" class="item-card" data-name="Color Picker Hex RGB Design">
-                <h3 class="card-title">Color Picker</h3>
-            </a>
-            <a href="/tools/committee-calculator.html" class="item-card" data-name="Committee Calculator Voting Decision">
-                <h3 class="card-title">Committee Calculator</h3>
-            </a>
-            <a href="/tools/date-difference.html" class="item-card" data-name="Date Difference Calculator Days Between">
-                <h3 class="card-title">Date Difference Calculator</h3>
-            </a>
-            <a href="/tools/discount-calculator.html" class="item-card" data-name="Discount Calculator Sale Price Percentage">
-                <h3 class="card-title">Discount Calculator</h3>
-            </a>
-            <a href="/tools/fancy-text-generator.html" class="item-card" data-name="Fancy Text Generator Stylish Fonts Social Media">
-                <h3 class="card-title">Fancy Text Generator</h3>
-            </a>
-            <a href="/tools/file-converter.html" class="item-card" data-name="File Converter Document PDF">
-                <h3 class="card-title">File Converter</h3>
-            </a>
-            <a href="/tools/final-grade-calculator.html" class="item-card" data-name="Final Grade Calculator Student Exam">
-                <h3 class="card-title">Final Grade Calculator</h3>
-            </a>
-            <a href="/tools/gpa-calculator.html" class="item-card" data-name="GPA Calculator Student Grade">
-                <h3 class="card-title">GPA Calculator</h3>
-            </a>
-            <a href="/tools/gradient-generator.html" class="item-card" data-name="Gradient Generator CSS Design">
-                <h3 class="card-title">Gradient Generator</h3>
-            </a>
-            <a href="/tools/image-compressor.html" class="item-card" data-name="Image Compressor Optimize JPEG PNG">
-                <h3 class="card-title">Image Compressor</h3>
-            </a>
-            <a href="/tools/image-to-base64.html" class="item-card" data-name="Image to Base64 Converter Embed">
-                <h3 class="card-title">Image to Base64</h3>
-            </a>
-            <a href="/tools/json-formatter.html" class="item-card" data-name="JSON Formatter Validator Developer">
-                <h3 class="card-title">JSON Formatter</h3>
-            </a>
-            <a href="/tools/loan-calculator.html" class="item-card" data-name="Loan Calculator EMI Finance">
-                <h3 class="card-title">EMI & Loan Calculator</h3>
-            </a>
-            <a href="/tools/lorem-ipsum.html" class="item-card" data-name="Lorem Ipsum Generator Dummy Text">
-                <h3 class="card-title">Lorem Ipsum Generator</h3>
-            </a>
-            <a href="/tools/markdown-previewer.html" class="item-card" data-name="Markdown Previewer Editor Text">
-                <h3 class="card-title">Markdown Previewer</h3>
-            </a>
-            <a href="/tools/my-ip-address.html" class="item-card" data-name="My IP Address Finder Network">
-                <h3 class="card-title">My IP Address</h3>
-            </a>
-            <a href="/tools/password-generator.html" class="item-card" data-name="Password Generator Secure Random">
-                <h3 class="card-title">Password Generator</h3>
-            </a>
-            <a href="/tools/percentage-calculator.html" class="item-card" data-name="Percentage Calculator Math">
-                <h3 class="card-title">Percentage Calculator</h3>
-            </a>
-            <a href="/tools/qr-generator.html" class="item-card" data-name="QR Code Generator Link Text">
-                <h3 class="card-title">QR Code Generator</h3>
-            </a>
-            <a href="/tools/random-number.html" class="item-card" data-name="Random Number Generator Picker">
-                <h3 class="card-title">Random Number Generator</h3>
-            </a>
-            <a href="/tools/similarity-checker.html" class="item-card" data-name="Similarity Checker Plagiarism Text Compare">
-                <h3 class="card-title">Similarity Checker</h3>
-            </a>
-            <a href="/tools/study-timer.html" class="item-card" data-name="Study Timer Pomodoro Focus">
-                <h3 class="card-title">Study Timer</h3>
-            </a>
-            <a href="/tools/temp-converter.html" class="item-card" data-name="Temperature Converter Celsius Fahrenheit Kelvin">
-                <h3 class="card-title">Temperature Converter</h3>
-            </a>
-            <a href="/tools/text-to-speech.html" class="item-card" data-name="Text to Speech TTS Audio Voice">
-                <h3 class="card-title">Text to Speech</h3>
-            </a>
-            <a href="/tools/tip-calculator.html" class="item-card" data-name="Tip Calculator Restaurant Bill">
-                <h3 class="card-title">Tip Calculator</h3>
-            </a>
-            <a href="/tools/unix-timestamp.html" class="item-card" data-name="Unix Timestamp Converter Epoch Time">
-                <h3 class="card-title">Unix Timestamp Converter</h3>
-            </a>
-            <a href="/tools/url-encoder.html" class="item-card" data-name="URL Encoder Decoder Percent Encoding">
-                <h3 class="card-title">URL Encoder</h3>
-            </a>
-            <a href="/tools/word-counter.html" class="item-card" data-name="Word Counter Character Count Text">
-                <h3 class="card-title">Word Counter</h3>
-            </a>
-            <a href="/tools/youtube-thumbnail-downloader.html" class="item-card" data-name="YouTube Thumbnail Downloader Video Image">
-                <h3 class="card-title">YouTube Thumbnail Downloader</h3>
-            </a>
-            <a href="/tools/zakat-calculator.html" class="item-card" data-name="Zakat Calculator Islam Finance Charity">
-                <h3 class="card-title">Zakat Calculator</h3>
-            </a>
+            <!-- Tools ki poori list yahan hai... -->
+            <a href="/tools/age-calculator.html" class="item-card" data-name="Age Calculator Date Birthday"> <h3 class="card-title">Age Calculator</h3> </a>
+            <a href="/tools/ai-prompt-generator.html" class="item-card" data-name="AI Prompt Generator Artificial Intelligence"> <h3 class="card-title">AI Prompt Generator</h3> </a>
+            <a href="/tools/base64-converter.html" class="item-card" data-name="Base64 Converter Encoder Decoder Developer"> <h3 class="card-title">Base64 Converter</h3> </a>
+            <a href="/tools/bmi-calculator.html" class="item-card" data-name="BMI Calculator Body Mass Index Health"> <h3 class="card-title">BMI Calculator</h3> </a>
+            <a href="/tools/box-shadow-generator.html" class="item-card" data-name="Box Shadow Generator CSS Design"> <h3 class="card-title">Box Shadow Generator</h3> </a>
+            <a href="/tools/case-picker.html" class="item-card" data-name="Case Picker Converter Upper Lower Text"> <h3 class="card-title">Case Converter</h3> </a>
+            <a href="/tools/color-picker.html" class="item-card" data-name="Color Picker Hex RGB Design"> <h3 class="card-title">Color Picker</h3> </a>
+            <a href="/tools/committee-calculator.html" class="item-card" data-name="Committee Calculator Voting Decision"> <h3 class="card-title">Committee Calculator</h3> </a>
+            <a href="/tools/date-difference.html" class="item-card" data-name="Date Difference Calculator Days Between"> <h3 class="card-title">Date Difference Calculator</h3> </a>
+            <a href="/tools/iscount-calculator.html" class="item-card" data-name="Discount Calculator Sale Price Percentage"> <h3 class="card-title">Discount Calculator</h3> </a>
+            <a href="/tools/fancy-text-generator.html" class="item-card" data-name="Fancy Text Generator Stylish Fonts Social Media"> <h3 class="card-title">Fancy Text Generator</h3> </a>
+            <a href="/tools/file-converter.html" class="item-card" data-name="File Converter Document PDF"> <h3 class="card-title">File Converter</h3> </a>
+            <a href="/tools/final-grade-calculator.html" class="item-card" data-name="Final Grade Calculator Student Exam"> <h3 class="card-title">Final Grade Calculator</h3> </a>
+            <a href="/tools/gpa-calculator.html" class="item-card" data-name="GPA Calculator Student Grade"> <h3 class="card-title">GPA Calculator</h3> </a>
+            <a href="/tools/gradient-generator.html" class="item-card" data-name="Gradient Generator CSS Design"> <h3 class="card-title">Gradient Generator</h3> </a>
+            <a href="/tools/image-compressor.html" class="item-card" data-name="Image Compressor Optimize JPEG PNG"> <h3 class="card-title">Image Compressor</h3> </a>
+            <a href="/tools/image-to-base64.html" class="item-card" data-name="Image to Base64 Converter Embed"> <h3 class="card-title">Image to Base64</h3> </a>
+            <a href="/tools/json-formatter.html" class="item-card" data-name="JSON Formatter Validator Developer"> <h3 class="card-title">JSON Formatter</h3> </a>
+            <a href="/tools/loan-calculator.html" class="item-card" data-name="Loan Calculator EMI Finance"> <h3 class="card-title">EMI & Loan Calculator</h3> </a>
+            <a href="/tools/lorem-ipsum.html" class="item-card" data-name="Lorem Ipsum Generator Dummy Text"> <h3 class="card-title">Lorem Ipsum Generator</h3> </a>
+            <a href="/tools/markdown-previewer.html" class="item-card" data-name="Markdown Previewer Editor Text"> <h3 class="card-title">Markdown Previewer</h3> </a>
+            <a href="/tools/my-ip-address.html" class="item-card" data-name="My IP Address Finder Network"> <h3 class="card-title">My IP Address</h3> </a>
+            <a href="/tools/password-generator.html" class="item-card" data-name="Password Generator Secure Random"> <h3 class="card-title">Password Generator</h3> </a>
+            <a href="/tools/percentage-calculator.html" class="item-card" data-name="Percentage Calculator Math"> <h3 class="card-title">Percentage Calculator</h3> </a>
+            <a href="/tools/qr-generator.html" class="item-card" data-name="QR Code Generator Link Text"> <h3 class="card-title">QR Code Generator</h3> </a>
+            <a href="/tools/random-number-generator.html" class="item-card" data-name="Random Number Generator Picker"> <h3 class="card-title">Random Number Generator</h3> </a>
+            <a href="/tools/similarity-checker.html" class="item-card" data-name="Similarity Checker Plagiarism Text Compare"> <h3 class="card-title">Similarity Checker</h3> </a>
+            <a href="/tools/study-timer.html" class="item-card" data-name="Study Timer Pomodoro Focus"> <h3 class="card-title">Study Timer</h3> </a>
+            <a href="/tools/temp-converter.html" class="item-card" data-name="Temperature Converter Celsius Fahrenheit Kelvin"> <h3 class="card-title">Temperature Converter</h3> </a>
+            <a href="/tools/text-to-speech.html" class="item-card" data-name="Text to Speech TTS Audio Voice"> <h3 class="card-title">Text to Speech</h3> </a>
+            <a href="/tools/tip-calculator.html" class="item-card" data-name="Tip Calculator Restaurant Bill"> <h3 class="card-title">Tip Calculator</h3> </a>
+            <a href="/tools/unix-timestamp.html" class="item-card" data-name="Unix Timestamp Converter Epoch Time"> <h3 class="card-title">Unix Timestamp Converter</h3> </a>
+            <a href="/tools/url-encoder.html" class="item-card" data-name="URL Encoder Decoder Percent Encoding"> <h3 class="card-title">URL Encoder</h3> </a>
+            <a href="/tools/word-counter.html" class="item-card" data-name="Word Counter Character Count Text"> <h3 class="card-title">Word Counter</h3> </a>
+            <a href="/tools/youtube-thumbnail-downloader.html" class="item-card" data-name="YouTube Thumbnail Downloader Video Image"> <h3 class="card-title">YouTube Thumbnail Downloader</h3> </a>
+            <a href="/tools/zakat-calculator.html" class="item-card" data-name="Zakat Calculator Islam Finance Charity"> <h3 class="card-title">Zakat Calculator</h3> </a>
         </div>
     </div>
 
-    <!-- Footer goes here -->
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2024 Asaan Tools Pro. All Rights Reserved.</p>
+        <nav class="footer-nav">
+            <a href="/all-articles.html">Blog/Articles</a>
+            <a href="/about.html">About Us</a>
+            <a href="/contact.html">Contact</a>
+            <a href="/privacy.html">Privacy Policy</a>
+        </nav>
+    </footer>
 
     <!-- JavaScript for Search -->
     <script>
