@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Image Compressor (JPG, PNG) - Reduce File Size</title>
+    <meta name="description" content="Compress your JPG and PNG images online to reduce file size without losing significant quality. A fast, free, and secure tool for web developers and photographers.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header"><h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1><p>Online Image Compressor</p></header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Compress Your Images</h2>
+                <div class="input-group">
+                    <label>1. Choose Your Image (JPG or PNG)</label>
+                    <input type="file" id="img-input" accept="image/jpeg, image/png">
+                </div>
+                <div class="input-group">
+                    <label>2. Select Quality (0.1 = smaller size, 1.0 = best quality)</label>
+                    <input type="range" id="quality-slider" min="0.1" max="1.0" step="0.1" value="0.8">
+                    <span id="quality-value">0.8</span>
+                </div>
+                <button id="compress-btn">Compress Image</button>
+                <div id="img-result" style="text-align:left; margin-top:20px;"></div>
+            </div>
+            <div class="seo-content">
+                <h2>Why Should You Compress Images?</h2>
+                <p>Large image files can significantly slow down your website's loading speed, which leads to a poor user experience and can negatively impact your search engine rankings. By compressing your images, you reduce their file size, making them load faster without a noticeable loss in quality.</p>
+                <h3>How Our Image Compressor Works:</h3>
+                <ol>
+                    <li>Click "Choose Your Image" and select a JPG or PNG file from your device.</li>
+                    <li>Use the slider to set your desired quality. A lower value (like 0.5) will result in a smaller file size but lower quality.</li>
+                    <li>Click the "Compress Image" button to see a preview.</li>
+                    <li>Your compressed image will be displayed along with the size reduction percentage. You can then download it with a single click.</li>
+                </ol>
+                <p><strong>Privacy Guaranteed:</strong> Your images are processed entirely within your browser. They are never uploaded to our servers, ensuring your data remains private and secure.</p>
+                
+                <h3 style="margin-top:30px;">Related Tools You Might Like</h3>
+                <p>After compressing your image, do you need to convert it to a different format like PDF or WEBP? Our all-in-one File Converter can help you with that.</p>
+                <p style="text-align: center;">
+                    <a href="/tools/file-converter.html" class="button" style="text-decoration: none; display: inline-block;">
+                        Try Our All-in-One File Converter
+                    </a>
+                </p>
+            </div>
+        </main>
+        <!-- === START: Related Content Section === -->
+<div class="related-content-container">
+
+    <!-- Featured Box -->
+    <div class="featured-related-box">
+        <h2>Need to Embed Your Image in Code?</h2>
+        <p>Apni image ko compress karne ke baad, aap usay direct HTML ya CSS mein use karne ke liye Base64 format mein convert kar sakte hain.</p>
+        <a href="image-to-base64.html" class="featured-cta-button">
+            Try Image to Base64 Converter
+        </a>
+    </div>
+
+    <!-- More Related Links -->
+    <div class="more-related-section">
+        <h3>More Image & Design Tools</h3>
+        <div class="related-links-grid">
+            <a href="qr-generator.html" class="related-link-item">QR Code Generator</a>
+            <a href="youtube-thumbnail-downloader.html" class="related-link-item">YouTube Thumbnail Downloader</a>
+            <a href="box-shadow-generator.html" class="related-link-item">Box Shadow Generator</a>
+            <a href="gradient-generator.html" class="related-link-item">Gradient Generator</a>
+        </div>
+    </div>
+
+</div>
+<!-- === END: Related Content Section === -->
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const imgInput = document.getElementById('img-input');
+        const qualitySlider = document.getElementById('quality-slider');
+        const qualityValue = document.getElementById('quality-value');
+        const compressBtn = document.getElementById('compress-btn');
+        const resultDiv = document.getElementById('img-result');
+        qualitySlider.addEventListener('input', () => { qualityValue.textContent = qualitySlider.value; });
+        compressBtn.addEventListener('click', () => {
+            const file = imgInput.files[0];
+            if (!file) { resultDiv.innerHTML = '<p class="result-display">Please select an image file first.</p>'; return; }
+            resultDiv.innerHTML = '<p class="result-display">Compressing, please wait...</p>';
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = event => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width; canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    const quality = parseFloat(qualitySlider.value);
+                    const newDataUrl = canvas.toDataURL(file.type, quality);
+                    const originalSize = (file.size / 1024).toFixed(2);
+                    const newSizeKB = (newDataUrl.length * 0.75 / 1024).toFixed(2);
+                    const reduction = ((1 - (newSizeKB / originalSize)) * 100).toFixed(0);
+                    resultDiv.innerHTML = `
+                        <div class="result-display">
+                            <p><strong>Original Size:</strong> ${originalSize} KB</p>
+                            <p><strong>Compressed Size:</strong> ${newSizeKB} KB (<strong>${reduction}% smaller</strong>)</p>
+                        </div>
+                        <img src="${newDataUrl}" style="max-width: 100%; margin-top: 15px; border-radius: 8px;">
+                        <div style="text-align: center; margin-top: 15px;">
+                            <a href="${newDataUrl}" download="compressed-${file.name}" class="button" style="text-decoration:none; display:inline-block;">Download Compressed Image</a>
+                        </div>
+                    `;
+                };
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Converter (Uppercase, Lowercase, Title Case) - Asaan Tools Pro</title>
+    <meta name="description" content="Easily convert your text between UPPERCASE, lowercase, Title Case, Sentence case, and more with our free online case converter tool.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-57KYCQBEVH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-57KYCQBEVH');
+</script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1><a href="/" style="text-decoration:none; color:inherit;">Asaan Tools <span>Pro</span></a></h1>
+            <p>Online Text Case Converter</p>
+        </header>
+        <main class="tool-page-container">
+            <div class="tool-box">
+                <h2>Case Converter</h2>
+                <textarea id="cc-input" placeholder="Paste your text here to convert..." rows="8"></textarea>
+                <div class="button-group">
+                    <button id="btn-upper">UPPERCASE</button>
+                    <button id="btn-lower">lowercase</button>
+                    <button id="btn-title">Title Case</button>
+                    <button id="btn-sentence">Sentence case</button>
+                </div>
+            </div>
+            <div class="seo-content">
+                <h2>About the Case Converter Tool</h2>
+                <p>The Case Converter is a handy online utility that allows you to change the capitalization of your text with a single click. It's an essential tool for writers, editors, students, and programmers who need to format text quickly without manually re-typing everything.</p>
+                <h3>Available Conversions:</h3>
+                <ul>
+                    <li><strong>UPPERCASE:</strong> Converts all letters in your text to uppercase (e.g., "hello world" becomes "HELLO WORLD").</li>
+                    <li><strong>lowercase:</strong> Converts all letters to lowercase (e.g., "Hello World" becomes "hello world").</li>
+                    <li><strong>Title Case:</strong> Capitalizes the first letter of each word (e.g., "a tale of two cities" becomes "A Tale Of Two Cities").</li>
+                    <li><strong>Sentence case:</strong> Capitalizes only the first letter of the first word in each sentence.</li>
+                </ul>
+            </div>
+        </main>
+        <!-- === START: Related Content Section === -->
+<div class="related-content-container">
+
+    <!-- Featured Box -->
+    <div class="featured-related-box">
+        <h2>Count Your Words and Characters</h2>
+        <p>Apne text ka case change karne ke baad, hamara Word Counter tool istemal karke uske alfaz aur haroof (characters) ki ginti karein.</p>
+        <a href="word-counter.html" class="featured-cta-button">
+            Use Word Counter
+        </a>
+    </div>
+
+    <!-- More Related Links -->
+    <div class="more-related-section">
+        <h3>More Text & Writing Utilities</h3>
+        <div class="related-links-grid">
+            <a href="fancy-text-generator.html" class="related-link-item">Fancy Text Generator</a>
+            <a href="text-to-speech.html" class="related-link-item">Text to Speech</a>
+            <a href="lorem-ipsum.html" class="related-link-item">Lorem Ipsum Generator</a>
+            <a href="similarity-checker.html" class="related-link-item">Similarity Checker</a>
+        </div>
+    </div>
+
+</div>
+<!-- === END: Related Content Section === -->
+        <footer class="main-footer"><p>© 2024 Asaan Tools Pro.</p><nav class="footer-nav"><a href="../about.html">About</a> | <a href="../contact.html">Contact</a> | <a href="../privacy.html">Privacy</a></nav></footer>
+    </div>
+    <script>
+        const i = document.getElementById('cc-input');
+        document.getElementById('btn-upper').addEventListener('click', () => { i.value = i.value.toUpperCase(); });
+        document.getElementById('btn-lower').addEventListener('click', () => { i.value = i.value.toLowerCase(); });
+        document.getElementById('btn-title').addEventListener('click', () => { i.value = i.value.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '); });
+        document.getElementById('btn-sentence').addEventListener('click', () => { i.value = i.value.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase()); });
+    </script>
+</body>
+</html>
